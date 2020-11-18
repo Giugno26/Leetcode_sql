@@ -1,2 +1,3 @@
 # Leetcode_sql
-Code record
+记录leetcode数据库代
+
