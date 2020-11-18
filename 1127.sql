@@ -14,7 +14,7 @@ select distinct spend_date,'both' as platform from Spending
 
 
 
-step2...
+step2. 计算金额和用户数
 select 
 ta.spend_date
 ,ta.plat
@@ -36,8 +36,6 @@ group by ta.spend_date,ta.plat
 
 
 step3. 合并
-
-
 select 
 t1.spend_date
 ,t1.platform
