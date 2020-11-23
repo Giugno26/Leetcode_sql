@@ -2,7 +2,7 @@
 
 https://leetcode-cn.com/problems/shortest-distance-in-a-plane/submissions/
 
-#考察知识点1：表连接条件
+#考察知识点：表连接条件
 
 
 #写法1
