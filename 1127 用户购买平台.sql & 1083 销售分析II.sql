@@ -35,17 +35,7 @@ group by ta.spend_date,ta.plat
 
 
 
-1083. 销售分析 II
-
-
-
-
-
-
-#
-
-
-step3. 合并
+#step3. 合并
 select 
 t1.spend_date
 ,t1.platform
@@ -81,3 +71,44 @@ on t1.spend_date = t2.spend_date
 and t1.platform = t2.plat
 
 
+
+
+
+
+1083. 销售分析 II
+
+https://leetcode-cn.com/problems/sales-analysis-ii/submissions/
+
+#方法一：行转列
+select 
+tb.buyer_id
+from(
+    select 
+    ta.buyer_id
+    ,sum(case when ta.product_name = 'S8' then 1 else 0 end) as S8
+    ,sum(case when ta.product_name = 'iPhone' then 1 else 0 end) as iPhone
+    from(
+        select 
+            t2.buyer_id
+            ,t1.product_name
+        from Product t1
+        inner join Sales t2
+        on t1.product_id = t2.product_id
+    )ta
+    group by ta.buyer_id
+
+
+
+
+
+)tb
+where tb.S8 >0 and iPhone=0
+
+
+
+#方法二：
+select s.buyer_id 
+from sales as s left join product as p 
+on s.product_id=p.product_id
+group by buyer_id
+having sum(p.product_name='S8')>0 and sum(p.product_name='iPhone')=0
