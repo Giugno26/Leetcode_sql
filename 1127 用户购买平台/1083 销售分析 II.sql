@@ -35,6 +35,16 @@ group by ta.spend_date,ta.plat
 
 
 
+1083. 销售分析 II
+
+
+
+
+
+
+#
+
+
 step3. 合并
 select 
 t1.spend_date
