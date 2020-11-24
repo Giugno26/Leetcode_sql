@@ -2,6 +2,8 @@
 
 https://leetcode-cn.com/problems/running-total-for-different-genders/
 
+#知识点：累计求和
+
 #方法一：连接
 select 
 ta.gender
